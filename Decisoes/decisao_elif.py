@@ -4,7 +4,7 @@ idade = int(input("Digite uma idade: "))
 # Método uper() transforma o input da variável para caixa-maior(SIM)
 doenca = input("Possui doença? ").upper()
 
-# Estrutura de decisão IF
+# Estrutura de decisão ELIF
 if idade >= 65:
     print("O paciente " + nome + " possui atendimento prioritário!")
 elif doenca == "SIM":
