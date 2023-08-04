@@ -8,6 +8,7 @@ def inserir(dicionario):
     dicionario[input("Digite o login: ").upper()] = [input("Digite o nome: ").upper(),
                                                    input("Digite a última data de acesso: ").upper(),
                                                    input("Digite a última estaçao acessada: ").upper()]
+    salvar(dicionario)
 
 def pesquisar(dicionario):
     print(dicionario.get(input("Digite o login do usuario: ")))
@@ -15,3 +16,8 @@ def pesquisar(dicionario):
 def excluir(dicionario):
     chave = input("Digite a chave que deseja excluir: ")
     del dicionario[chave]
+
+def salvar(dicionario):
+    with open("bd.txt", "a") as arquivo:
+        for chave, valor in dicionario.items():
+            arquivo.write(chave + ":" + str(valor))
